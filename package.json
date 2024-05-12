@@ -1,0 +1,24 @@
+{
+  "name": "threejs-playground",
+  "version": "1.0.0",
+  "description": "trent messes with threejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trentwirth/threejs-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trentwirth/threejs-playground/issues"
+  },
+  "homepage": "https://github.com/trentwirth/threejs-playground#readme",
+  "dependencies": {
+    "three": "^0.164.1",
+    "three-full": "^28.0.2"
+  }
+}
