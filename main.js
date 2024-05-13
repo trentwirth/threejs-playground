@@ -5,8 +5,9 @@ import { VRButton } from 'https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js
 const scene = new THREE.Scene();
 
 // Create a camera
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = 5;
+camera.position.y = 1;
 
 // Create a renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -28,9 +29,21 @@ const gridHelper = new THREE.GridHelper(size, divisions);
 gridHelper.material.color.set(0x00ff00); // Set grid color to green
 scene.add(gridHelper);
 
+// Variables for the ellipse
+let time = 0;
+const a = 5; // semi-major axis
+const b = 3; // semi-minor axis
+
 // Animation
 function animate() {
     renderer.setAnimationLoop(function () {
+        // Update the position of the sphere to follow an elliptical path
+        cube.position.x = a * Math.cos(time);
+        cube.position.z = b * Math.sin(time);
+
+        // Update the time variable
+        time += 0.01;
+
         cube.rotation.x += 0.01;
         cube.rotation.y += 0.01;
         renderer.render(scene, camera);
