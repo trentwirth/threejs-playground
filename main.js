@@ -16,10 +16,17 @@ document.body.appendChild(renderer.domElement);
 document.body.appendChild(VRButton.createButton(renderer)); // Add VR button
 
 // Create a cube
-const geometry = new THREE.BoxGeometry();
+const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
+
+// Create a grid helper
+const size = 10;
+const divisions = 10;
+const gridHelper = new THREE.GridHelper(size, divisions);
+gridHelper.material.color.set(0x00ff00); // Set grid color to green
+scene.add(gridHelper);
 
 // Animation
 function animate() {
